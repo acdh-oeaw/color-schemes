@@ -8,7 +8,7 @@ export interface ColorSchemeState {
 declare global {
 	interface Window {
 		__colorScheme: {
-			apply: () => void;
+			apply: (document?: Document) => void;
 			get: () => ColorSchemeState;
 			set: (colorScheme: ColorScheme | null) => void;
 			subscribe: (listener: () => void) => () => void;
@@ -35,7 +35,7 @@ export function createColorSchemeScript(dataAttribute: string, storageKey: strin
 		return { kind: "system", colorScheme };
 	}
 
-	function apply() {
+	function apply(document = window.document) {
 		document.documentElement.dataset[dataAttribute] = state.colorScheme;
 	}
 
