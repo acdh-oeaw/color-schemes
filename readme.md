@@ -45,6 +45,12 @@ system settings.
 
 ## how to set up
 
+## html
+
+```html
+<script src="https://unpkg.com/@acdh-oeaw/color-schemes/script"></script>
+```
+
 ## react
 
 add the following blocking script in `<head>`:
