@@ -19,7 +19,8 @@
 		"dist"
 	],
 	"exports": {
-		".": "./dist/index.mjs"
+		".": "./dist/index.mjs",
+		"./script": "./dist/script.iife.js"
 	},
 	"scripts": {
 		"build": "tsdown",
