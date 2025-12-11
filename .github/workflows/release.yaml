@@ -13,9 +13,14 @@ jobs:
     name: Release
     runs-on: ubuntu-24.04
 
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -25,6 +30,7 @@ jobs:
         with:
           node-version: 24.x
           cache: pnpm
+          registry-url: https://registry.npmjs.org
 
       # Ensure `npm` 11.5.1 or later is installed (which is needed for trusted publishing).
       - name: Update npm
@@ -42,6 +48,4 @@ jobs:
           publish: pnpm run ci:release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true

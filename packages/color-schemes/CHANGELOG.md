@@ -1,5 +1,13 @@
 # @acdh-oeaw/color-schemes
 
+## 0.1.0
+
+### Minor Changes
+
+- [#5](https://github.com/acdh-oeaw/color-schemes/pull/5)
+  [`52b3288`](https://github.com/acdh-oeaw/color-schemes/commit/52b3288831a5709a45fd964f85bf984c49b6d543)
+  Thanks [@stefanprobst](https://github.com/stefanprobst)! - add iife build for scripts
+
 ## 0.0.3
 
 ### Patch Changes
